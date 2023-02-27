@@ -15,7 +15,8 @@ export const EmojiConst = ({Datas}) =>{
            {
             Datas.map((emojis, index)=>{
               return   <div className="card" >
-              <div className="card-cont" key={index}>
+              <div className="card-cont" key={index} onClick={()=>navigator.clipboard.writeText(`${emojis.slug}`)
+} >
                    <p className="emoji-character">{emojis.character}</p>
               <p className="emoji-name">{emojis.slug}</p>
               </div>

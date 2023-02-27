@@ -60,12 +60,13 @@ padding: 14px;
 
 .card .card-cont {
   display: flex;
+  position: relative;
   background-color: #8ecae6;
   margin: 6px 0;
   height: 40px;
 align-items: center;
+cursor: pointer;
 }
-
 .emoji-character{
   padding-left: 20px;
 font-size: 28px;
