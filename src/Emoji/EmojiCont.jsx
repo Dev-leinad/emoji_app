@@ -19,7 +19,9 @@ export const EmojiConst = ({Datas}) =>{
 } >
                    <p className="emoji-character">{emojis.character}</p>
               <p className="emoji-name">{emojis.slug}</p>
+                    <p className='copy' >Copy</p>
               </div>
+            
              
           </div>
             })

@@ -47,6 +47,7 @@ background-color: #219ebc;
 padding: 14px;
   font-size: 18px;
   outline: none;
+  font-weight: 600;
   border: none;
   cursor: pointer;
   margin-left: 10px;
@@ -67,11 +68,46 @@ padding: 14px;
 align-items: center;
 cursor: pointer;
 }
+
+.card .card-cont:hover .copy{
+  display: block;
+}
+
 .emoji-character{
   padding-left: 20px;
 font-size: 28px;
 }
+.copy{
+  color: green;
+  position: absolute;
+  right: 0;
+  font-size: 20px;
+  display: none;
+  margin-right: 100px;
+}
 
 .emoji-name{
   margin-left: 12px;
+}
+
+@media screen and (max-width:768px) {
+  .content-box .form{
+    padding-top:6px;
+  }
+  .content-box .form input{
+    padding:1rem;
+  }
+  .content-box button{
+    width: 22%;
+    font-weight: 550;
+  padding: 12px;
+    font-size: 14px;
+    margin-left: 6px;
+  }
+
+  .card{
+    width: 100%;
+    margin: auto;
+    /* background-color: #000; */
+  }
 }
