@@ -1,24 +1,31 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import { EmojiConst } from '../Emoji/EmojiCont'
 
 
 
 export const Emoji = () => {
   const [search, setSearch]  =useState('')
-  const [Data, SetData] =useState([]);
+  const [Data, setData]=useState([])
   const handleSearch = (e)=>{
         setSearch (e.target.value)
   }
 
   const handleSubmit =()=>{
-    if (search !== ''){
+    if (search !== '' && search!==null){
         fetch (`https://emoji-api.com/emojis?search=${search}&access_key=3d23ed1c17aa92e7a08cd1631a7e02b588a066a3`)  
         .then(Resp =>Resp.json())
-        .then(Resp => SetData(Resp))   
+        .then(Resp => setData(Resp))   
 
     }
+    
   }
 
+  useEffect (()=>{
+    fetch ('https://emoji-api.com/emojis?access_key=3d23ed1c17aa92e7a08cd1631a7e02b588a066a3')  
+    .then(Resp =>Resp.json())
+    .then(Resp => setData(Resp))   
+
+}, [])
         return (
 
           
@@ -38,7 +45,7 @@ export const Emoji = () => {
                         </div>
                        
                     </div>
-                   <EmojiConst />
+                   <EmojiConst Datas={Data}  />
                 </div>
             </>
           )
